@@ -14,10 +14,10 @@ if ($conn->connect_error) {
 
 echo "Conectado com Sucesso!";
 
-$sql1 = "SELECT codigo, prazo, valor, data_inclusao FROM Tb_contrato";
+$sql1 = "SELECT codigo, prazo, valor, data_inclusao FROM Tb_contrato;";
 $sql2a = "SELECT convenio_servico FROM Tb_contrato";
 $sql2b = "SELECT convenio FROM Tb_convenio_servico WHERE codigo IN (";
-$sql2c = "SELECT verba, banco FROM Tb_convenio WHERE convenio IN (" . $sql2b . $sql2a . "))";
+$sql2c = "SELECT verba, banco FROM Tb_convenio WHERE convenio IN (" . $sql2b . $sql2a . "));";
 
 $result1 = $conn->query($sql1);
 $result2 = $conn->query($sql2c);
